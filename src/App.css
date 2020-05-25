@@ -1,38 +1,255 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ReactBubble {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 600px) {
+  .hallway {
+    display: flex;
+    justify-content: space-around;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .doorFrame {
+    width: 12em;
+    height: 24em;
   }
+}
+
+.hallway {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.shopDoor {
+  display: inline-block;
+  margin: 20px;
+}
+
+.backDoor {
+  display: inline-block;
+  margin: 20px;
+}
+
+.doorFrame {
+  width: 300px;
+  height: 600px;
+  background: black;
+  border: 10px #c3721f solid;
+}
+
+.ajar {
+  transform: skew(0deg, 3deg) translate(6px, 8px) scale(1.05, 1);
+}
+
+.door {
+  background-color: #c3721f;
+  margin: 3px;
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  position: relative;
+  border: 1px solid black;
+}
+
+.hinge {
+  display: inline-block;
+  width: 5px;
+  height: 30px;
+  background: #d3af7d;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.top {
+  position: absolute;
+  top: 30px;
+  left: -4.5px;
+}
+
+.middle {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: -4.5px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 30px;
+  left: -4.5px;
+}
+
+.sign {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 30px;
+  background: #d3af7d;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  font-family: "Notable", sans-serif;
+  color: #774600;
+  letter-spacing: 1px;
+}
+
+.porthole {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  top: 15%;
+  left: calc(50% - 50px);
+  background-color: #d3af7d;
+  border: 1px solid black;
+}
+
+.innerPorthole {
+  position: relative;
+  border: 1px solid black;
+  background: black;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  border-radius: 100px;
+  margin-top: 14px;
+  margin-left: 14px;
+}
+
+.glass {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  border-radius: 100px;
+  background: #c2c2cb;
+}
+
+.lugnut {
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #a18b60;
+  border: 1px solid #695a3f;
+}
+
+.noon {
+  position: absolute;
+  top: -11px;
+  left: calc(50% - 3px);
+}
+
+.two {
+  position: absolute;
+  top: 7px;
+  right: -3px;
+}
+.four {
+  position: absolute;
+  bottom: 7px;
+  right: -3px;
+}
+.six {
+  position: absolute;
+  bottom: -11px;
+  left: calc(50% - 3px);
+}
+.eight {
+  position: absolute;
+  bottom: 7px;
+  left: -3px;
+}
+.ten {
+  position: absolute;
+  top: 7px;
+  left: -3px;
+}
+
+.doorKnobPlate {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 40px);
+  height: 80px;
+  width: 20px;
+  background: #d3af7d;
+  border: 1px solid black;
+}
+
+.innerDoorKnob {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.doorKnob {
+  width: 50px;
+  height: 10px;
+  background: #d3af7d;
+  border-radius: 5px;
+  top: 20px;
+  position: absolute;
+  right: 3px;
+  border: 1px solid black;
+}
+
+.keyhole {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 10px;
+  background: black;
+  border-radius: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.eyes {
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  top: 23px;
+  left: 10px;
+}
+.eyes img {
+  width: 50px;
+}
+
+.passwordForm {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  background: #e4a86c;
+  line-height: 30px;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 1px 1px black;
+}
+
+.passwordForm button {
+  margin-left: 5px;
+}
+
+.passwordForm input {
+  margin-left: 5px;
+}
+
+.shop {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.backroom {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
