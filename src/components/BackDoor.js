@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import LockedBubble from "./LockedBubble";
+import HoverBubble from "./HoverBubble";
 import Bubble from "react-bubble/build/Bubble";
 
 class BackDoor extends Component {
@@ -99,12 +99,15 @@ class BackDoor extends Component {
             </div>
 
             <div className="doorKnobPlate">
-              <LockedBubble>
-                <div className="innerDoorKnob">
-                  <div className="doorKnob"></div>
-                  <div className="keyhole"></div>
+              <div className="innerDoorKnob">
+                <div className="doorKnob clickable">
+                  <HoverBubble message="It's Locked">
+                    <div style={{ width: "100%", height: "100%" }}></div>
+                  </HoverBubble>
                 </div>
-              </LockedBubble>
+
+                <div className="keyhole"></div>
+              </div>
             </div>
             {form}
 

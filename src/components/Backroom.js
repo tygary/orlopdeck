@@ -16,11 +16,13 @@ function Backroom(props) {
   }
 
   return (
-    <div className="backroom">
-      <button onClick={handleGoBack}>Go Back</button>
-      <h1>Welcome!</h1>
-      <p>Join us...</p>
-      <button onClick={handleEnterQueue}>Enter the Queue</button>
+    <div className="backroom subPage">
+      <div className="innerContent">
+        <button onClick={handleGoBack}>Go Back</button>
+        <h1>Welcome!</h1>
+        <p>Join us...</p>
+        <button onClick={handleEnterQueue}>Enter the Queue</button>
+      </div>
     </div>
   );
 }

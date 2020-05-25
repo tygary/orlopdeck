@@ -2,7 +2,7 @@ import React from "react";
 import Bubble from "react-bubble";
 import { Redirect } from "react-router-dom";
 
-export default class LockedBubble extends React.Component {
+export default class HoverBubble extends React.Component {
   state = {
     bubbleDisplayed: false,
   };
@@ -51,7 +51,7 @@ export default class LockedBubble extends React.Component {
               height={20}
               width={100}
             >
-              It's Locked
+              {this.props.message}
             </Bubble>
           </span>
         ) : (

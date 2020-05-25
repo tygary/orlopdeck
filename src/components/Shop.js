@@ -11,12 +11,14 @@ function Shop(props) {
   }
 
   return (
-    <div className="shop">
-      <button onClick={handleGoBack}>Go Back</button>
-      <h1>Wecome to the Silk Traders of the Orlop Deck</h1>
-      <p>blah</p>
+    <div className="shop subPage">
+      <div className="innerContent">
+        <button onClick={handleGoBack}>Go Back</button>
+        <h1>Wecome to the Silk Traders of the Orlop Deck</h1>
+        <p>blah</p>
 
-      <button onClick={handleEnter}>Enter</button>
+        <button onClick={handleEnter}>Enter</button>
+      </div>
     </div>
   );
 }
