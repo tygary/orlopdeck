@@ -8,12 +8,23 @@ export default class HoverBubble extends React.Component {
   };
 
   onMouseEnter = () => {
-    this.setState({ bubbleDisplayed: true });
+    if (this.props.enabled !== false) {
+      this.setState({ bubbleDisplayed: true });
+    }
   };
 
   onMouseLeave = () => {
     this.setState({ bubbleDisplayed: false });
   };
+
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.enabled !== prevProps.enabled &&
+      this.props.enabled === false
+    ) {
+      this.setState({ bubbleDisplayed: false });
+    }
+  }
 
   render() {
     const props = {

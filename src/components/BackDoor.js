@@ -88,7 +88,12 @@ class BackDoor extends Component {
               onClick={this.handleClickPorthole}
             >
               <div className="innerPorthole">
-                <div className="glass">{eyes}</div>
+                <HoverBubble
+                  message="Knock..."
+                  enabled={!this.state.hasKnocked}
+                >
+                  <div className="glass">{eyes}</div>
+                </HoverBubble>
                 <div className="lugnut noon"></div>
                 <div className="lugnut two"></div>
                 <div className="lugnut four"></div>

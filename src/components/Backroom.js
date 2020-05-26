@@ -8,7 +8,7 @@ function Backroom(props) {
   }
 
   function handleEnterQueue() {
-    alert("entered!");
+    window.open("https://forms.gle/C6XeDGQUXM7QnBEw7", "_blank");
   }
 
   function handleGoBack() {

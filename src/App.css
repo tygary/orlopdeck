@@ -1,6 +1,7 @@
 body {
   background-color: black;
   color: white;
+  width: 100%;
 }
 
 .ReactBubble {
@@ -73,8 +74,8 @@ body {
 .door {
   background-color: #c3721f;
   margin: 3px;
-  height: calc(100% - 6px);
-  width: calc(100% - 6px);
+  height: calc(100% - 8px);
+  width: calc(100% - 8px);
   position: relative;
   border: 1px solid black;
 }
