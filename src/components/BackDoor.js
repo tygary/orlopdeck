@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import HoverBubble from "./HoverBubble";
 import Bubble from "react-bubble/build/Bubble";
+import EyeLogo from "./EyeLogo";
+import md5 from "md5";
 
 class BackDoor extends Component {
   state = {
@@ -19,10 +21,15 @@ class BackDoor extends Component {
     });
   };
 
-  handleSubmitPassword = () => {
+  handleSubmitPassword = (event) => {
+    event.preventDefault();
+    let answer = this.state.password;
+
+    answer = answer.toLocaleLowerCase().replace(" ", "").replace("the", "");
+
     // What are you doing here? Cheating?
     // Go to the store and interact to get the password.
-    if (this.state.password === "test") {
+    if (md5(answer) === "ab334feeb31c05124cb73fa12571c2f6") {
       localStorage.setItem("KNOWS_THE_PASSWORD", "true");
       this.props.history.push("/backroom");
     } else {
@@ -66,14 +73,15 @@ class BackDoor extends Component {
     );
 
     let form = this.state.hasKnocked ? (
-      <div className="passwordForm">
+      <form className="passwordForm" onSubmit={this.handleSubmitPassword}>
         <input
           type="password"
+          data-lpignore="true"
           value={this.state.password}
           onChange={(event) => this.setState({ password: event.target.value })}
         ></input>
-        <button onClick={this.handleSubmitPassword}>Enter</button>
-      </div>
+        <button>Enter</button>
+      </form>
     ) : (
       ""
     );
@@ -102,7 +110,9 @@ class BackDoor extends Component {
                 <div className="lugnut ten"></div>
               </div>
             </div>
-
+            <div className="eyeLogo">
+              <EyeLogo className="eyeLogo" />
+            </div>
             <div className="doorKnobPlate">
               <div className="innerDoorKnob">
                 <div className="doorKnob clickable">
