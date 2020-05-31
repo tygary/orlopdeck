@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import EyeLogo from "./EyeLogo";
 
 function Shop(props) {
   function handleEnter() {
