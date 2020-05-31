@@ -40,6 +40,10 @@ class BackDoor extends Component {
     }
   };
 
+  formClick = (event) => {
+    event.stopPropagation();
+  };
+
   render() {
     let eyes = this.state.hasKnocked ? (
       <div className="eyes">
@@ -74,7 +78,11 @@ class BackDoor extends Component {
     );
 
     let form = this.state.hasKnocked ? (
-      <form className="passwordForm" onSubmit={this.handleSubmitPassword}>
+      <form
+        className="passwordForm"
+        onClick={this.formClick}
+        onSubmit={this.handleSubmitPassword}
+      >
         <input
           type="password"
           data-lpignore="true"
@@ -90,25 +98,22 @@ class BackDoor extends Component {
     return (
       <div className="backDoor">
         <div className="doorFrame">
-          <div 
+          <div
             className="door clickable"
             onMouseEnter={() => this.setState({ isHovered: true })}
-            onMouseLeave={() => this.setState({ 
-              isHovered: false,
-              hasKnocked: false,
-            })}
+            onMouseLeave={() =>
+              this.setState({
+                isHovered: false,
+                hasKnocked: false,
+              })
+            }
             onClick={this.handleClick}
           >
-            <HoverBubble
-              message="Knock..."
-              enabled={!this.state.hasKnocked}
-            >
+            <HoverBubble message="Knock..." enabled={!this.state.hasKnocked}>
               <div style={{ width: "100%", height: "100%" }}></div>
             </HoverBubble>
             <div className="sign">Private</div>
-            <div
-              className="porthole"
-            >
+            <div className="porthole">
               <div className="innerPorthole">
                 <div className="glass">{eyes}</div>
                 <div className="lugnut noon"></div>

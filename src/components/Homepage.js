@@ -2,12 +2,10 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import ShopDoor from "./ShopDoor";
 import BackDoor from "./BackDoor";
-import BulletinBoard from './BulletinBoard/BulletinBoard';
+import BulletinBoard from "./BulletinBoard/BulletinBoard";
 
 function Homepage(props) {
-  const {
-    history
-  } = props;
+  const { history } = props;
 
   return (
     <div className="homePage">
@@ -19,10 +17,10 @@ function Homepage(props) {
           <ShopDoor />
         </div>
         <div className="hallwayItemContainer">
-          <BackDoor />
+          <BulletinBoard history={history} />
         </div>
         <div className="hallwayItemContainer">
-          <BulletinBoard history={history}/>
+          <BackDoor />
         </div>
       </div>
     </div>
