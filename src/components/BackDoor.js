@@ -8,11 +8,12 @@ import md5 from "md5";
 class BackDoor extends Component {
   state = {
     hasKnocked: false,
+    isHovered: false,
     password: "",
     windowMessage: "",
   };
 
-  handleClickPorthole = () => {
+  handleClick = () => {
     this.setState((state) => {
       return {
         hasKnocked: !state.hasKnocked,
@@ -89,19 +90,27 @@ class BackDoor extends Component {
     return (
       <div className="backDoor">
         <div className="doorFrame">
-          <div className="door">
+          <div 
+            className="door clickable"
+            onMouseEnter={() => this.setState({ isHovered: true })}
+            onMouseLeave={() => this.setState({ 
+              isHovered: false,
+              hasKnocked: false,
+            })}
+            onClick={this.handleClick}
+          >
+            <HoverBubble
+              message="Knock..."
+              enabled={!this.state.hasKnocked}
+            >
+              <div style={{ width: "100%", height: "100%" }}></div>
+            </HoverBubble>
             <div className="sign">Private</div>
             <div
-              className="porthole clickable"
-              onClick={this.handleClickPorthole}
+              className="porthole"
             >
               <div className="innerPorthole">
-                <HoverBubble
-                  message="Knock..."
-                  enabled={!this.state.hasKnocked}
-                >
-                  <div className="glass">{eyes}</div>
-                </HoverBubble>
+                <div className="glass">{eyes}</div>
                 <div className="lugnut noon"></div>
                 <div className="lugnut two"></div>
                 <div className="lugnut four"></div>
