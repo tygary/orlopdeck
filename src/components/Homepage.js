@@ -5,13 +5,17 @@ import BackDoor from "./BackDoor";
 
 function Homepage(props) {
   return (
-    <div>
+    <div class="homePage">
       <div className="upperHallway">
         <div className="hallSign">Orlop Deck</div>
       </div>
       <div className="hallway">
-        <ShopDoor />
-        <BackDoor />
+        <div className="doorContainer">
+          <ShopDoor />
+        </div>
+        <div className="doorContainer">
+          <BackDoor />
+        </div>
       </div>
     </div>
   );

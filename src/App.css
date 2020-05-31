@@ -1,46 +1,51 @@
 body {
   background-color: black;
   color: rgb(238, 238, 238);
-  width: 100%;
 }
 
 .ReactBubble {
   color: black;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .hallway {
-    display: flex;
     justify-content: space-around;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .doorFrame {
-    width: 12em;
-    height: 24em;
-  }
+.homePage {
+  overflow-x: scroll;
+  max-height: 100vh;
+  background-color: #522900;
+  -ms-overflow-style: none;
+}
+
+.homePage::-webkit-scrollbar {
+  display: none;
 }
 
 .hallway {
-  background-color: #522900;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.doorContainer {
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .upperHallway {
-  background-color: #522900;
   width: 100%;
-  height: 50px;
-  margin-top: 30px;
   padding-top: 20px;
 }
 
 .hallSign {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: auto;
   line-height: 40px;
-  height: 50px;
+  min-height: 50px;
   text-align: center;
   background-color: #d3af7c;
   border: 1px solid black;
@@ -51,12 +56,10 @@ body {
 }
 
 .shopDoor {
-  display: inline-block;
   margin: 20px;
 }
 
 .backDoor {
-  display: inline-block;
   margin: 20px;
 }
 
