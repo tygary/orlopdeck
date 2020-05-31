@@ -1,0 +1,40 @@
+.postsPage {
+  width: 100%;
+  min-height: 100vh;
+  background: #522900;
+  font-family: Verdana;
+}
+
+.postsPageContent {
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+}
+
+.postsPageTitle {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  line-height: 40px;
+  min-height: 50px;
+  text-align: center;
+  background-color: #d3af7c;
+  border: 1px solid black;
+  font-size: xx-large;
+  font-family: "Notable", sans-serif;
+  color: #774600;
+  letter-spacing: 1px;
+}
+
+.postsPagePost {
+  color: #774600;
+  background-color: #d3af7c;
+  border: 1px solid black;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.postsPagePost h2 {
+  font-family: "Notable", sans-serif;
+}

@@ -5,8 +5,12 @@ import BackDoor from "./BackDoor";
 import BulletinBoard from './BulletinBoard/BulletinBoard';
 
 function Homepage(props) {
+  const {
+    history
+  } = props;
+
   return (
-    <div class="homePage">
+    <div className="homePage">
       <div className="upperHallway">
         <div className="hallSign">Orlop Deck</div>
       </div>
@@ -18,7 +22,7 @@ function Homepage(props) {
           <BackDoor />
         </div>
         <div className="hallwayItemContainer">
-          <BulletinBoard />
+          <BulletinBoard history={history}/>
         </div>
       </div>
     </div>
