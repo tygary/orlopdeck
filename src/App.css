@@ -30,7 +30,7 @@ body {
   flex-wrap: nowrap;
 }
 
-.doorContainer {
+.hallwayItemContainer {
   overflow: hidden;
   flex-shrink: 0;
 }
